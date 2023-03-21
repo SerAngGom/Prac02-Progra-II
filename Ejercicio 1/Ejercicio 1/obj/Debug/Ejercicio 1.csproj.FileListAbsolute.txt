@@ -1,0 +1,3 @@
+C:\Users\angul\Desktop\Repositorios gitHub\Prac02-Progra-II\Ejercicio 1\Ejercicio 1\obj\Debug\Ejercicio 1.csproj.AssemblyReference.cache
+C:\Users\angul\Desktop\Repositorios gitHub\Prac02-Progra-II\Ejercicio 1\Ejercicio 1\obj\Debug\Ejercicio 1.csproj.SuggestedBindingRedirects.cache
+C:\Users\angul\Desktop\Repositorios gitHub\Prac02-Progra-II\Ejercicio 1\Ejercicio 1\obj\Debug\Ejercicio 1.csproj.CoreCompileInputs.cache
