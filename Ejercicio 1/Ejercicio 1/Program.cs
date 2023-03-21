@@ -10,7 +10,11 @@ namespace Ejercicio_1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(CuentaPositivos(5, int[2,4]));
+            int[] list = { -1, 2, 3, 4, -5, 6, 7, -8, 9, 10, 11, -12, 13, -14, };
+            int pos = list.Length-1;
+            Program p = new Program();
+            Console.WriteLine(p.CuentaPositivos(pos, list));
+            Console.ReadKey();
         }
         public int CuentaPositivos(int pos, int[] a)
         {
