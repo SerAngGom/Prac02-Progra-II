@@ -15,6 +15,13 @@ namespace Ejercicio_4
         public Calle[] CallesSalida { get; set; }
         private int contEntrada;
         private int contSalida;
+        public Cruce(String nombre, String Codigo, Calle[] CallesEntrada, Calle[] CallesSalida)
+        {
+            this.nombre = nombre;
+            this.Codigo = Codigo;
+            this.CallesEntrada = CallesEntrada;
+            this.CallesSalida = CallesSalida;
+        }
         public bool Congestionada(Calle[] CallesEntrada, Calle[] CallesSalida)
         {
 
