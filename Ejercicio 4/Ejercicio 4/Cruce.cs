@@ -24,7 +24,8 @@ namespace Ejercicio_4
         }
         public bool Congestionada(Calle[] CallesEntrada, Calle[] CallesSalida)
         {
-
+            contEntrada = 0;
+            contSalida = 0;
             foreach (Calle C in CallesEntrada)
             {
                 if (C.ocupacion == NivelesOcupacion.Rojo)
@@ -36,7 +37,7 @@ namespace Ejercicio_4
                     contSalida++;
 
             }
-            if (contEntrada >= CallesEntrada.Length && contSalida >= CallesSalida.Length)
+            if (contEntrada >= CallesEntrada.Length/2 && contSalida >= CallesSalida.Length/2)
             {
                 return true;
             }
