@@ -24,7 +24,8 @@ namespace Ejercicio_7
         }
 
         public static void Sumar_Iguales(int[,] matriz)
-        { 
+        {
+            Desplazarcero(matriz);
             int sum;
             for (int col = 0; col < matriz.GetLength(1); col++)
             {
@@ -46,13 +47,20 @@ namespace Ejercicio_7
             int aux;
             for (int col = 0; col < matriz.GetLength(1); col++)
             {
-                for (int fil = 0; fil < matriz.GetLength(0)+1; fil++)
+                for (int fil = 0; fil < matriz.GetLength(0) - 1; fil++)
                 {
-                    if (matriz[fil, col] != 0 && matriz[fil - 1, col] == 0)
+                    if (matriz[fil, col] != 0 && matriz[matriz.GetLength(0) - 1, col] == 0)
                     {
                         aux = matriz[fil, col];
                         matriz[fil, col] = matriz[matriz.GetLength(0) - 1, col];
                         matriz[matriz.GetLength(0) - 1, col] = aux;
+                    }
+
+                    else if (matriz[fil, col] != 0 && matriz[fil + 1, col] == 0)
+                    {
+                        aux = matriz[fil, col];
+                        matriz[fil, col] = matriz[fil + 1, col];
+                        matriz[fil + 1, col] = aux;
                     }
                 }
             }
