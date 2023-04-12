@@ -8,9 +8,8 @@ namespace Ejercicio_5
 {
     internal class Program
     {
-        int[,] matriz = { { 1, 4, 5, 6, 7, 7 }, { 4, 0, 4, 2, 0, 2 }, { 4, 16, 0, 2, 0, 0 }, { 0, 0, 0, 8, 2, 0 } };
         static void Main(string[] args) {
-            int[,] matriz = { { 1, 4, 5, 6, 7, 7 }, { 1, 4, 5, 6, 7, 7 }, { 4, 0, 4, 2, 0, 2 }, { 4, 16, 0, 2, 0, 0 }, { 0, 0, 0, 8, 2, 0 } };
+            int[,] matriz = { { 4, 0, 4, 2, 0, 2 }, { 4, 6, 0, 2, 0, 0 } ,{ 0, 0, 0, 8, 2, 0 } };
             desplazarcero(matriz);
             for (int i = 0; i < matriz.GetLength(0); i++)
             {
@@ -29,20 +28,17 @@ namespace Ejercicio_5
             int aux;
             for (int col = 0; col < matriz.GetLength(1); col++)
             {
-                for (int fil = 0; fil < matriz.GetLength(0)-1; fil++)
+                for (int fil = 1; fil < matriz.GetLength(0); fil++)
                 {
-                    if (matriz[fil, col] != 0 && matriz[matriz.GetLength(0)-1, col] == 0)
+                    if (matriz[fil, col] == 0 && matriz[fil-1, col] != 0)
                     {
-                        aux = matriz[fil, col]; 
-                        matriz[fil, col] = matriz[matriz.GetLength(0) - 1, col];
-                        matriz[matriz.GetLength(0) - 1, col] = aux;
-                    }
-
-                    else if (matriz[fil, col] != 0 && matriz[fil + 1, col] == 0)
-                    {
-                        aux = matriz[fil, col];
-                        matriz[fil, col] = matriz[fil + 1, col];
-                        matriz[fil + 1, col] = aux;
+                        while (fil != 0 && matriz[fil -1, col ] != 0)
+                        {
+                            aux = matriz[fil -1, col ];
+                            matriz[fil, col] = aux;
+                            matriz[fil -1, col] = 0;
+                            fil--;
+                        }
                     }
                 }
             }

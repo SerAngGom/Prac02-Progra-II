@@ -29,8 +29,6 @@ namespace Ejercicio_6
         public static void desplazarcerofil(int[,] matriz)
         {
             int aux;
-            int auxfil;
-            int auxcol;
             for (int fil = 0; fil < matriz.GetLength(0); fil++)
             {
                 for (int col = 1; col < matriz.GetLength(1); col++)
