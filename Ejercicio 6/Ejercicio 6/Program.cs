@@ -21,7 +21,6 @@ namespace Ejercicio_6
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine(matriz.GetLength(1));
             Console.ReadKey();
 
         }
@@ -38,18 +37,13 @@ namespace Ejercicio_6
                 {
                     if (matriz[fil,col] == 0 && matriz[fil, col-1]!=0)
                     {
-                        auxfil = fil;
-                        auxcol = col;
-                        while (matriz[fil, col - 1] != 0 ) ;
+                        while ( col != 0  && matriz[fil, col - 1] != 0 )
                         {
                             aux = matriz[fil, col - 1];
                             matriz[fil, col] = aux;
                             matriz[fil, col - 1] = 0;
-                            fil--;
                             col--;
                         }
-                        fil = auxfil;
-                        col = auxcol;
                     }
                 }
             }
