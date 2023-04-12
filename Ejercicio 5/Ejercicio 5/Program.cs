@@ -8,9 +8,9 @@ namespace Ejercicio_5
 {
     internal class Program
     {
-        int[,] matriz = { { 4, 0, 4, 2, 0, 2 }, { 4, 16, 0, 2, 0, 0 }, { 0, 0, 0, 8, 2, 0 } };
+        int[,] matriz = { { 1, 4, 5, 6, 7, 7 }, { 4, 0, 4, 2, 0, 2 }, { 4, 16, 0, 2, 0, 0 }, { 0, 0, 0, 8, 2, 0 } };
         static void Main(string[] args) {
-            int[,] matriz = { { 4, 0, 4, 2, 0, 2 }, { 4, 16, 0, 2, 0, 0 }, { 0, 0, 0, 8, 2, 0 } };
+            int[,] matriz = { { 1, 4, 5, 6, 7, 7 }, { 1, 4, 5, 6, 7, 7 }, { 4, 0, 4, 2, 0, 2 }, { 4, 16, 0, 2, 0, 0 }, { 0, 0, 0, 8, 2, 0 } };
             desplazarcero(matriz);
             for (int i = 0; i < matriz.GetLength(0); i++)
             {
