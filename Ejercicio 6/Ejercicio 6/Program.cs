@@ -8,7 +8,6 @@ namespace Ejercicio_6
 {
     internal class Program
     {
-        int[,] matriz = { { 8, 0, 4, 4, 0, 2 }, { 4, 6, 0, 2, 0, 0 }, { 0, 0, 0, 8, 2, 0 } };
         static void Main(string[] args)
         {
             int[,] matriz = { { 8, 0, 4, 4, 0, 2 }, { 4, 6, 0, 2, 0, 0 }, { 0, 0, 0, 8, 2, 0 } };
