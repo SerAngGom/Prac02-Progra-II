@@ -10,7 +10,7 @@ namespace Ejercicio_5
     {
         static void Main(string[] args) {
             int[,] matriz = { { 4, 0, 4, 2, 0, 2 }, { 4, 6, 0, 2, 0, 0 } ,{ 0, 0, 0, 8, 2, 0 } };
-            desplazarcero(matriz);
+            DesplazarceroCol(matriz);
             for (int i = 0; i < matriz.GetLength(0); i++)
             {
                 for (int j = 0; j < matriz.GetLength(1); j++)
@@ -24,7 +24,8 @@ namespace Ejercicio_5
         }
 
 
-        public static void desplazarcero(int[,] matriz) { 
+        public static void DesplazarceroCol(int[,] matriz) 
+        { 
             int aux;
             for (int col = 0; col < matriz.GetLength(1); col++)
             {

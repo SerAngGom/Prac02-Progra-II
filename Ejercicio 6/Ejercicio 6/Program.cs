@@ -12,7 +12,7 @@ namespace Ejercicio_6
         static void Main(string[] args)
         {
             int[,] matriz = { { 8, 0, 4, 4, 0, 2 }, { 4, 6, 0, 2, 0, 0 }, { 0, 0, 0, 8, 2, 0 } };
-            desplazarcerofil(matriz);
+            DesplazarceroFil(matriz);
             for (int i = 0; i < matriz.GetLength(0); i++)
             {
                 for (int j = 0; j < matriz.GetLength(1); j++)
@@ -26,7 +26,7 @@ namespace Ejercicio_6
         }
 
         
-        public static void desplazarcerofil(int[,] matriz)
+        public static void DesplazarceroFil(int[,] matriz)
         {
             int aux;
             for (int fil = 0; fil < matriz.GetLength(0); fil++)

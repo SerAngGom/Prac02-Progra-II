@@ -10,8 +10,8 @@ namespace Ejercicio_7
     {
         static void Main(string[] args)
         {
-            int[,] matriz = { { 2, 0, 0, 2, 0, 0}, { 4, 0, 0, 2, 0, 0 }, { 4, 16, 4, 8, 2, 2} };
-            Sumar_Iguales(matriz);
+            int[,] matriz = { { 2, 0, 0, 2, 0, 0}, { 4, 0, 0, 2, 0, 0 }, { 4, 6, 4, 8, 2, 2} };
+            SumarIgualesCol(matriz);
             for (int i = 0; i < matriz.GetLength(0); i++)
             {
                 for (int j = 0; j < matriz.GetLength(1); j++)
@@ -23,9 +23,9 @@ namespace Ejercicio_7
             Console.ReadKey();
         }
 
-        public static void Sumar_Iguales(int[,] matriz)
+        public static void SumarIgualesCol(int[,] matriz)
         {
-            Desplazarcero(matriz);
+            DesplazarceroCol(matriz);
             int sum;
             for (int col = 0; col < matriz.GetLength(1); col++)
             {
@@ -39,28 +39,25 @@ namespace Ejercicio_7
                     }
                 }
             }
-            Desplazarcero(matriz);
+            DesplazarceroCol(matriz);
         }
 
-        public static void Desplazarcero(int[,] matriz)
+        public static void DesplazarceroCol(int[,] matriz)
         {
             int aux;
             for (int col = 0; col < matriz.GetLength(1); col++)
             {
-                for (int fil = 0; fil < matriz.GetLength(0) - 1; fil++)
+                for (int fil = 1; fil < matriz.GetLength(0); fil++)
                 {
-                    if (matriz[fil, col] != 0 && matriz[matriz.GetLength(0) - 1, col] == 0)
+                    if (matriz[fil, col] == 0 && matriz[fil - 1, col] != 0)
                     {
-                        aux = matriz[fil, col];
-                        matriz[fil, col] = matriz[matriz.GetLength(0) - 1, col];
-                        matriz[matriz.GetLength(0) - 1, col] = aux;
-                    }
-
-                    else if (matriz[fil, col] != 0 && matriz[fil + 1, col] == 0)
-                    {
-                        aux = matriz[fil, col];
-                        matriz[fil, col] = matriz[fil + 1, col];
-                        matriz[fil + 1, col] = aux;
+                        while (fil != 0 && matriz[fil - 1, col] != 0)
+                        {
+                            aux = matriz[fil - 1, col];
+                            matriz[fil, col] = aux;
+                            matriz[fil - 1, col] = 0;
+                            fil--;
+                        }
                     }
                 }
             }
