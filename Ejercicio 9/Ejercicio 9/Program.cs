@@ -10,6 +10,8 @@ namespace Ejercicio_9
     {
         static void Main(string[] args)
         {
+            int[,] matriz = { { 8, 0, 4, 4, 0, 2 }, { 4, 16, 0, 2, 0, 2 }, { 0, 0, 0, 8, 2, 0 } }
+
         }
     }
 }
