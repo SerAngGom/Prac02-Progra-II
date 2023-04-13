@@ -1,0 +1,8 @@
+C:\Users\angul\Desktop\Repositorios gitHub\Prac02-Progra-II\Ejercicio 9\Ejercicio 9\obj\Debug\Ejercicio 9.csproj.AssemblyReference.cache
+C:\Users\angul\Desktop\Repositorios gitHub\Prac02-Progra-II\Ejercicio 9\Ejercicio 9\obj\Debug\Ejercicio 9.csproj.SuggestedBindingRedirects.cache
+C:\Users\angul\Desktop\Repositorios gitHub\Prac02-Progra-II\Ejercicio 9\Ejercicio 9\obj\Debug\Ejercicio 9.csproj.CoreCompileInputs.cache
+C:\Users\angul\Desktop\Repositorios gitHub\Prac02-Progra-II\Ejercicio 9\Ejercicio 9\bin\Debug\Ejercicio 9.exe.config
+C:\Users\angul\Desktop\Repositorios gitHub\Prac02-Progra-II\Ejercicio 9\Ejercicio 9\bin\Debug\Ejercicio 9.exe
+C:\Users\angul\Desktop\Repositorios gitHub\Prac02-Progra-II\Ejercicio 9\Ejercicio 9\bin\Debug\Ejercicio 9.pdb
+C:\Users\angul\Desktop\Repositorios gitHub\Prac02-Progra-II\Ejercicio 9\Ejercicio 9\obj\Debug\Ejercicio 9.exe
+C:\Users\angul\Desktop\Repositorios gitHub\Prac02-Progra-II\Ejercicio 9\Ejercicio 9\obj\Debug\Ejercicio 9.pdb
