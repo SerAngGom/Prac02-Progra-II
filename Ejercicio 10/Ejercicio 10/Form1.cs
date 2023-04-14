@@ -16,14 +16,27 @@ namespace Ejercicio_10
     public partial class Form1 : Form
     {
         int[,] matrizglobal = { { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 2, 2, 2, 2 } };
-        Label[,] matrizlabel = { { Casilla00, Casilla01, Casilla02, Casilla03 }, { Casilla10, Casilla11, Casilla12, Casilla13 },
-            {Casilla20, Casilla21, Casilla22, Casilla23 }, {Casilla30,Casilla31, Casilla32, Casilla33 } };
+        Label[,] matrizlabel = new Label[4,4];
 
         public Form1()
         {
             InitializeComponent();
-            Label[,] matrizlabel = { { Casilla00, Casilla01, Casilla02, Casilla03 }, { Casilla10, Casilla11, Casilla12, Casilla13 },
-            {Casilla20, Casilla21, Casilla22, Casilla23 }, {Casilla30,Casilla31, Casilla32, Casilla33 } };
+            matrizlabel[0, 0] = Casilla00;
+            matrizlabel[0, 1] = Casilla01;
+            matrizlabel[0, 2] = Casilla02;
+            matrizlabel[0, 3] = Casilla03;
+            matrizlabel[1, 0] = Casilla10;
+            matrizlabel[1, 1] = Casilla11;
+            matrizlabel[1, 2] = Casilla12;
+            matrizlabel[1, 3] = Casilla13;
+            matrizlabel[2, 0] = Casilla20;
+            matrizlabel[2, 1] = Casilla21;
+            matrizlabel[2, 2] = Casilla22;
+            matrizlabel[2, 3] = Casilla23;
+            matrizlabel[3, 0] = Casilla30;
+            matrizlabel[3, 1] = Casilla31;
+            matrizlabel[3, 2] = Casilla32;
+            matrizlabel[3, 3] = Casilla33;
 
         }
 
@@ -98,7 +111,7 @@ namespace Ejercicio_10
             ordenarUp(matrizglobal);
             sumarUp(matrizglobal);
             generarNum2(matrizglobal);
-            actualizarMatrizLabelPrueba(matrizglobal, matrizlabel);
+            actualizarMatrizLabel(matrizglobal, matrizlabel);
         }
 
         private void buttonDown_Click(object sender, EventArgs e)
@@ -106,7 +119,7 @@ namespace Ejercicio_10
             ordenarDown(matrizglobal);
             sumarDown(matrizglobal);
             generarNum2(matrizglobal);
-            actualizarMatrizLabel(matrizglobal);
+            actualizarMatrizLabel(matrizglobal, matrizlabel);
         }
 
         private void buttonLeft_Click(object sender, EventArgs e)
@@ -114,7 +127,7 @@ namespace Ejercicio_10
             ordenarLeft(matrizglobal);
             sumarLeft(matrizglobal);
             generarNum2(matrizglobal);
-            actualizarMatrizLabel(matrizglobal);
+            actualizarMatrizLabel(matrizglobal, matrizlabel);
         }
 
         private void buttonRight_Click(object sender, EventArgs e)
@@ -122,7 +135,7 @@ namespace Ejercicio_10
             ordenarRight(matrizglobal);
             sumarRight(matrizglobal);
             generarNum2(matrizglobal);
-            actualizarMatrizLabel(matrizglobal);
+            actualizarMatrizLabel(matrizglobal, matrizlabel);
         }
         public void ordenarDown(int[,] matrizglobal)
         {
@@ -273,33 +286,66 @@ namespace Ejercicio_10
             }
             ordenarLeft(matrizglobal);
         }
-        public void actualizarMatrizLabel(int[,] matrizglobal)
-        {
-            Casilla00.Text = Convert.ToString(matrizglobal[0, 0]);
-            Casilla01.Text = Convert.ToString(matrizglobal[0, 1]);
-            Casilla02.Text = Convert.ToString(matrizglobal[0, 2]);
-            Casilla03.Text = Convert.ToString(matrizglobal[0, 3]);
-            Casilla10.Text = Convert.ToString(matrizglobal[1, 0]);
-            Casilla11.Text = Convert.ToString(matrizglobal[1, 1]);
-            Casilla12.Text = Convert.ToString(matrizglobal[1, 2]);
-            Casilla13.Text = Convert.ToString(matrizglobal[1, 3]);
-            Casilla20.Text = Convert.ToString(matrizglobal[2, 0]);
-            Casilla21.Text = Convert.ToString(matrizglobal[2, 1]);
-            Casilla22.Text = Convert.ToString(matrizglobal[2, 2]);
-            Casilla23.Text = Convert.ToString(matrizglobal[2, 3]);
-            Casilla30.Text = Convert.ToString(matrizglobal[3, 0]);
-            Casilla31.Text = Convert.ToString(matrizglobal[3, 1]);
-            Casilla32.Text = Convert.ToString(matrizglobal[3, 2]);
-            Casilla33.Text = Convert.ToString(matrizglobal[3, 3]);
-        }
 
-        public void actualizarMatrizLabelPrueba(int[,] matrizglobal, Label[,] matrizlabel)
+        public void actualizarMatrizLabel(int[,] matrizglobal, Label[,] matrizlabel)
         {
             for (int fil = 0; fil < matrizglobal.GetLength(0); fil++)
             {
                 for (int col = 0; col < matrizglobal.GetLength(1); col++)
                 {
-                    matrizlabel[fil, col].Text= Convert.ToString(matrizglobal[fil, col]);
+                    if (matrizglobal[fil, col] != 0)
+                    {
+                        matrizlabel[fil, col].Text = Convert.ToString(matrizglobal[fil, col]);
+                    }
+                    else matrizlabel[fil, col].Text = "";
+                }
+            }
+            for (int fil = 0; fil < matrizlabel.GetLength(0); fil++)
+            {
+                for (int col = 0; col < matrizlabel.GetLength(1); col++)
+                {
+                    if (matrizlabel[fil,col].Text=="2")
+                    {
+                        matrizlabel[fil, col].BackColor = Color.Red;
+                    }
+                    else if (matrizlabel[fil, col].Text == "4")
+                    {
+                        matrizlabel[fil, col].BackColor = Color.Orange;
+                    }
+                    else if (matrizlabel[fil, col].Text == "8")
+                    {
+                        matrizlabel[fil, col].BackColor = Color.Yellow;
+                    }
+                    else if (matrizlabel[fil, col].Text == "16")
+                    {
+                        matrizlabel[fil, col].BackColor = Color.Green;
+                    }
+                    else if (matrizlabel[fil, col].Text == "32")
+                    {
+                        matrizlabel[fil, col].BackColor = Color.Blue;
+                    }
+                    else if (matrizlabel[fil, col].Text == "64")
+                    {
+                        matrizlabel[fil, col].BackColor = Color.Purple;
+                    }
+                    else if (matrizlabel[fil, col].Text == "128")
+                    {
+                        matrizlabel[fil, col].BackColor = Color.Pink;
+                    }
+                    else if (matrizlabel[fil, col].Text == "256")
+                    {
+                        matrizlabel[fil, col].BackColor = Color.Brown;
+                    }
+                    else if (matrizlabel[fil, col].Text == "512")
+                    {
+                        matrizlabel[fil, col].BackColor = Color.Gray;
+                    }
+                    else if (matrizlabel[fil, col].Text == "1024")
+                    {
+                        matrizlabel[fil, col].BackColor = Color.Black;
+                        matrizlabel[fil, col].ForeColor= Color.White;
+                    }
+                    else matrizlabel[fil, col].BackColor = Color.White;
                 }
             }
         }
