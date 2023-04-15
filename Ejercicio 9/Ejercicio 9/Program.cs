@@ -10,8 +10,8 @@ namespace Ejercicio_9
     {
         static void Main(string[] args)
         {
-            int[,] matriz = { { 8, 0, 4, 4, 0, 2 }, { 4, 16, 0, 2, 0, 2 }, { 0, 0, 0, 8, 2, 0 } };
-
+            int[,] matriz = { { 8, 0, 4, 4, 0, 2 }, { 4, 16, 0, 2, 0, 0 }, { 0, 0, 0, 8, 2, 0 } };
+            Console.WriteLine("Matriz inicial:");
             for (int i = 0; i < matriz.GetLength(0); i++)
             {
                 for (int j = 0; j < matriz.GetLength(1); j++)
@@ -23,11 +23,13 @@ namespace Ejercicio_9
             int[] arrayceros = CrearArrayCeros(matriz);
             Random random= new Random();
             int posicionAleatoria = random.Next(arrayceros.Length);
+            Console.WriteLine("Posicion aleatoria generada:");
             Console.WriteLine(arrayceros[posicionAleatoria]);
             int fila;
             int columna;
             fila = arrayceros[posicionAleatoria] / matriz.GetLength(1);
             columna = arrayceros[posicionAleatoria] % matriz.GetLength(1);
+            Console.WriteLine("Posicion en cordenadas [x,y]:");
             Console.WriteLine("("+ fila + "," + columna + ")");
             Console.ReadKey();
         }
