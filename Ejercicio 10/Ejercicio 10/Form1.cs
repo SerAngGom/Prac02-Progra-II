@@ -15,7 +15,7 @@ namespace Ejercicio_10
 
     public partial class Form1 : Form
     {
-        int[,] matrizglobal = { { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 2, 2, 2, 2 } };
+        int[,] matrizglobal = { { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 } };
         Label[,] matrizlabel = new Label[4,4];
 
         public Form1()
@@ -37,10 +37,10 @@ namespace Ejercicio_10
             matrizlabel[3, 1] = Casilla31;
             matrizlabel[3, 2] = Casilla32;
             matrizlabel[3, 3] = Casilla33;
-
+            generarNum2(matrizglobal);
+            generarNum2(matrizglobal);
+            actualizarMatrizLabel(matrizglobal, matrizlabel);
         }
-
-
 
         private void Casilla00_Click(object sender, EventArgs e)
         {
@@ -112,6 +112,7 @@ namespace Ejercicio_10
             sumarUp(matrizglobal);
             generarNum2(matrizglobal);
             actualizarMatrizLabel(matrizglobal, matrizlabel);
+            GameOver(matrizglobal);
         }
 
         private void buttonDown_Click(object sender, EventArgs e)
@@ -120,6 +121,7 @@ namespace Ejercicio_10
             sumarDown(matrizglobal);
             generarNum2(matrizglobal);
             actualizarMatrizLabel(matrizglobal, matrizlabel);
+            GameOver(matrizglobal);
         }
 
         private void buttonLeft_Click(object sender, EventArgs e)
@@ -128,6 +130,7 @@ namespace Ejercicio_10
             sumarLeft(matrizglobal);
             generarNum2(matrizglobal);
             actualizarMatrizLabel(matrizglobal, matrizlabel);
+            GameOver(matrizglobal);
         }
 
         private void buttonRight_Click(object sender, EventArgs e)
@@ -136,6 +139,7 @@ namespace Ejercicio_10
             sumarRight(matrizglobal);
             generarNum2(matrizglobal);
             actualizarMatrizLabel(matrizglobal, matrizlabel);
+            GameOver(matrizglobal);
         }
         public void ordenarDown(int[,] matrizglobal)
         {
@@ -395,6 +399,30 @@ namespace Ejercicio_10
             }
             return array;
 
+        }
+        public void GameOver(int[,] matrizglobal)
+        {
+            int contador = 0;
+            for (int fil = 0; fil < matrizglobal.GetLength(0); fil++)
+            {
+                for (int col = 0; col < matrizglobal.GetLength(1); col++)
+                {
+                    if (matrizglobal[fil,col]== 2048)
+                    {
+                        MessageBox.Show("¡Felicidades, has ganado!");
+                        break;
+                    }
+                    if (matrizglobal[fil, col] != 0)
+                    {
+                        contador++;
+                        if (contador==16)
+                        {
+                            MessageBox.Show("GAME OVER");
+                        }
+                    }
+                }
+
+            }
         }
     }
 }
