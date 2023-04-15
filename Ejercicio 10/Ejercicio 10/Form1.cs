@@ -311,45 +311,58 @@ namespace Ejercicio_10
                     if (matrizlabel[fil,col].Text=="2")
                     {
                         matrizlabel[fil, col].BackColor = Color.Red;
+                        matrizlabel[fil, col].ForeColor = Color.Black;
                     }
                     else if (matrizlabel[fil, col].Text == "4")
                     {
                         matrizlabel[fil, col].BackColor = Color.Orange;
+                        matrizlabel[fil, col].ForeColor = Color.Black;
                     }
                     else if (matrizlabel[fil, col].Text == "8")
                     {
                         matrizlabel[fil, col].BackColor = Color.Yellow;
+                        matrizlabel[fil, col].ForeColor = Color.Black;
                     }
                     else if (matrizlabel[fil, col].Text == "16")
                     {
                         matrizlabel[fil, col].BackColor = Color.Green;
+                        matrizlabel[fil, col].ForeColor = Color.Black;
                     }
                     else if (matrizlabel[fil, col].Text == "32")
                     {
                         matrizlabel[fil, col].BackColor = Color.Blue;
+                        matrizlabel[fil, col].ForeColor = Color.Black;
                     }
                     else if (matrizlabel[fil, col].Text == "64")
                     {
                         matrizlabel[fil, col].BackColor = Color.Purple;
+                        matrizlabel[fil, col].ForeColor = Color.Black;
                     }
                     else if (matrizlabel[fil, col].Text == "128")
                     {
                         matrizlabel[fil, col].BackColor = Color.Pink;
+                        matrizlabel[fil, col].ForeColor = Color.Black;
                     }
                     else if (matrizlabel[fil, col].Text == "256")
                     {
                         matrizlabel[fil, col].BackColor = Color.Brown;
+                        matrizlabel[fil, col].ForeColor = Color.Black;
                     }
                     else if (matrizlabel[fil, col].Text == "512")
                     {
                         matrizlabel[fil, col].BackColor = Color.Gray;
+                        matrizlabel[fil, col].ForeColor = Color.Black;
                     }
                     else if (matrizlabel[fil, col].Text == "1024")
                     {
                         matrizlabel[fil, col].BackColor = Color.Black;
                         matrizlabel[fil, col].ForeColor= Color.White;
                     }
-                    else matrizlabel[fil, col].BackColor = Color.White;
+                    else
+                    {
+                        matrizlabel[fil, col].BackColor = Color.White;
+                        matrizlabel[fil, col].ForeColor = Color.Black;
+                    }
                 }
             }
         }
